@@ -1,0 +1,45 @@
+.wrapper {
+  display: flex;
+}
+
+.side-bar {
+  background-color: #f0e9d5;
+  color: #333333;
+  width: 300px;
+  height: 100vh;
+  font-family: "游明朝体";
+}
+
+.side-bar-header {
+  height: 100px;
+  padding: 0 20px;
+}
+.content {
+  background-color: #f0e9d5;
+  height: calc(100vh - 100px);
+  padding: 0 20px;
+}
+
+.diary {
+  background-color: #fffcf4;
+  color: #333333;
+  width: calc(100% - 300px);
+  font-family: "游明朝体";
+  /* 仮設定フォント */
+}
+
+.diaries {
+  background-color: #fffcf4;
+  color: #333333;
+  width: calc(100% - 300px);
+  height: calc(100vh - 300px);
+  font-family: "游明朝体";
+  /* 仮設定フォント */
+  padding: 46px 40px 0;
+}
+
+.form {
+  background-color: #DDDDDD;
+  height: 300px;
+  padding: 20px 40px;
+}
