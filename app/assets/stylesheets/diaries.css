@@ -180,7 +180,7 @@ hr {
 }
 
 /* 右側メニュー右のログアウトボタン */
-.logout-button {
+.header-button {
   margin: 25px 40px;
   border: none;
   padding: 12px 18px;
@@ -197,7 +197,12 @@ hr {
   inset -10px -10px 30px transparent;
 }
 
-.logout-button:hover {
+.header-button a {
+  text-decoration: none;
+  color: rgba(87, 87, 80, 0.8);
+}
+
+.header-button:hover {
   box-shadow:
   10px 10px 30px transparent,
   -10px -10px 30px transparent,

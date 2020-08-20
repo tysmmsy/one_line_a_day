@@ -12,7 +12,7 @@
   </div>
   <div class="right-header">
     <div class="header-button">
-      <input type="submit" value="logout" class="logout-button">
+       <%= link_to "logout", destroy_user_session_path, method: :delete, class: 'logout-button'%>
     </div>
   </div>
 </div>
