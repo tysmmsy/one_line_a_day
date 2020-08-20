@@ -2,13 +2,14 @@
   display: flex;
 }
 
+/* 左側のメニューの親要素 */
 .side-bar {
   background-color: #f0e9d5;
   color: #333333;
   width: 300px;
   height: 100vh;
   font-family: "游明朝体";
-  margin: 30px;
+  margin: 50px;
   box-shadow:
   0 1.9px 2.5px rgba(0, 0, 0, 0.057),
   0 5px 6.1px rgba(0, 0, 0, 0.076),
@@ -18,24 +19,27 @@
   0 101px 74px rgba(0, 0, 0, 0.13);
 }
 
+/* 左側メニューのヘッダー要素 */
 .side-bar-header {
   background-color: #f0e9d5;
-  height: 92px;
+  height: 90px;
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* 検索フォーム部分 */
 .search-diary {
   color: rgba(87, 87, 80, 0.8);
   font-size: 18px;
   padding: 5px;
+  margin: 10px;
   border-radius: 10px;
   border: none;
   outline: none;
   box-shadow:
-  10px 10px 30px rgba(66, 67, 68, 0.5),
+  10px 10px 30px rgba(163, 163, 158, 0.5),
   -10px -10px 30px rgba(248, 253, 255, 0.9),
   inset 10px 10px 30px transparent,
   inset -10px -10px 30px transparent;
@@ -47,9 +51,11 @@ input::placeholder {
   font-size: 18px;
 }
 
+/* 虫眼鏡ボタン */
 .fas {
   border: none;
   padding: 12px 18px;
+  margin: 10px;
   color: rgba(87, 87, 80, 0.8);
   font-size: 15px;
   background-color:rgba(248, 253, 255, 0.9);
@@ -75,6 +81,7 @@ hr {
   border: ridge 1px rgba(248, 253, 255, 0.9);
 }
 
+/* 左側の日記一覧部分の親要素 */
 .contents {
   background-color: #f0e9d5;
   height: calc(100vh - 100px);
@@ -82,6 +89,7 @@ hr {
   overflow: scroll;
 }
 
+/* スクロールバー設置 */
 .contents::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -98,16 +106,19 @@ hr {
   background: #ece9de;
 }
 
+/* 日記一覧部分 */
 .content {
   padding: 0 40px;
   text-decoration: none;
 }
 
+/* 日記の日付 */
 .content-date a {
   text-decoration: none;
   color: rgba(87, 87, 80, 0.8);
 }
 
+/* 日記の題名 */
 .content-name{
   padding-bottom: 15px;
 }
@@ -117,13 +128,14 @@ hr {
   color: rgba(54, 44, 9, 0.87);
 }
 
+/* 右側のメニューの親要素 */
 .diary {
   background-color: #fffcf4;
   color: #333333;
   width: calc(100% - 300px);
   font-family: "游明朝体";
   /* 仮設定フォント */
-  margin: 20px;
+  margin: 30px;
   box-shadow:
   0 1.9px 2.5px rgba(0, 0, 0, 0.057),
   0 5px 6.1px rgba(0, 0, 0, 0.076),
@@ -133,41 +145,164 @@ hr {
   0 101px 74px rgba(0, 0, 0, 0.13);
 }
 
+/* 右側のメニューのヘッダー要素 */
 .diary-header {
   background-color: #f5f1e6;
   height: 100px;
+  display: flex;
+  justify-content: space-between;
 }
 
+/* 右側メニュー左の日付要素 */
+.header-date {
+  color: #333;
+  font-size: 24px;
+  margin: 40px;
+  transition: box-shadow 0.5s;
+  box-shadow:
+  10px 10px 30px rgba(89, 90, 92, 0.5),
+  -10px -10px 30px rgba(248, 253, 255, 0.9),
+  inset 10px 10px 30px transparent,
+  inset -10px -10px 30px transparent;
+}
+
+/* 右側メニュー右のログアウトボタン */
+.logout-button {
+  margin: 25px 40px;
+  border: none;
+  padding: 12px 18px;
+  color: rgba(87, 87, 80, 0.8);
+  font-size: 15px;
+  background-color:rgba(248, 253, 255, 0.9);
+  border-radius: 10px;
+  outline: none;
+  transition: box-shadow 0.5s;
+  box-shadow:
+  10px 10px 30px rgba(89, 90, 92, 0.5),
+  -10px -10px 30px rgba(248, 253, 255, 0.9),
+  inset 10px 10px 30px transparent,
+  inset -10px -10px 30px transparent;
+}
+
+.logout-button:hover {
+  box-shadow:
+  10px 10px 30px transparent,
+  -10px -10px 30px transparent,
+  inset 10px 10px 30px rgba(89, 90, 92, 0.5),
+  inset -10px -10px 30px rgba(248, 253, 255, 0.9);
+}
+
+/* 日記詳細部分 */
 .diaries {
   background-color: #fffcf4;
   color: #333333;
   height: calc(100vh - 100px - 250px);
   font-family: "游明朝体";
   /* 仮設定フォント */
-  overflow: scroll;
   white-space: nowrap;
   padding: 46px 40px 0;
 }
 
+.message {
+  margin: 20px 0;
+  overflow: scroll;
+}
+
+.upper-message {
+  display: flex;
+}
+
+/* 題名部分 */
+.message-title {
+  color: #333333;
+  font-size: 16px;
+}
+
+/* 日付部分 */
+.message-date {
+  color: rgba(87, 87, 80, 0.8);
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.lower-message {
+  margin-top: 10px;
+}
+
+.message-content {
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
 /* スクロールの幅の設定 */
-.diaries::-webkit-scrollbar {
+.message::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 
 /* スクロールの背景の設定 */
-.diaries::-webkit-scrollbar-track {
+.message::-webkit-scrollbar-track {
   background-color: #fffcf4;
 }
 
 /* スクロールのつまみ部分の設定 */
-.diaries::-webkit-scrollbar-thumb {
+.message::-webkit-scrollbar-thumb {
   border-radius: 5px;
   background: #fffcf4;
 }
 
+/* 日記フォーム部分 */
 .form {
   background-color: #ece9de;
   height: 250px;
   padding: 20px 40px;
+  display: flex;
+}
+
+.form-input {
+  background-color: rgba(255, 255, 255, 0.747);
+  display: flex;
+  width: 100%;
+}
+
+/* 日記投稿フォーム部分 */
+.form-message {
+  border: none;
+  height: 215px;
+  width: 100%;
+  font-size: 18px;
+  outline: none;
+  padding: 40px 0 0 50px;
+  transition: box-shadow 0.5s;
+  box-shadow:
+  10px 10px 30px rgba(89, 90, 92, 0.5),
+  -10px -10px 30px rgba(248, 253, 255, 0.9),
+  inset 10px 10px 30px transparent,
+  inset -10px -10px 30px transparent;
+}
+
+/* 日記投稿ボタン部分 */
+.form-submit {
+  background-color:rgba(248, 253, 255, 0.9);
+  border: none;
+  color: rgba(87, 87, 80, 0.8);
+  height: 50px;
+  width: 100px;
+  margin: 165px 0px 0px 30px;
+  outline: none;
+  border-radius: 10px;
+  transition: box-shadow 0.5s;
+  box-shadow:
+  10px 10px 30px rgba(89, 90, 92, 0.5),
+  -10px -10px 30px rgba(248, 253, 255, 0.9),
+  inset 10px 10px 30px transparent,
+  inset -10px -10px 30px transparent;
+}
+
+.form-submit:hover {
+  box-shadow:
+  10px 10px 30px transparent,
+  -10px -10px 30px transparent,
+  inset 10px 10px 30px rgba(89, 90, 92, 0.5),
+  inset -10px -10px 30px rgba(248, 253, 255, 0.9);
 }
