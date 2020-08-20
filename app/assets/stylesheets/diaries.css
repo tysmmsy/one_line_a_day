@@ -145,7 +145,7 @@ hr {
   0 101px 74px rgba(0, 0, 0, 0.13);
 }
 
-/* 右側のメニューのヘッダー要素 */
+/* 右側のメニューのヘッダーの親要素 */
 .diary-header {
   background-color: #f5f1e6;
   height: 100px;
@@ -153,11 +153,30 @@ hr {
   justify-content: space-between;
 }
 
-/* 右側メニュー左の日付要素 */
+/* 右側のメニューの左ヘッダーの親要素 */
+.left-header {
+  display: flex;
+}
+
+/* 右側メニュー左ヘッダーの日付要素 */
 .header-date {
   color: #333;
   font-size: 24px;
   margin: 40px;
+}
+
+/* 右側メニューの左ヘッダーのユーザー名要素 */
+.header-name {
+  margin: 40px 0;
+  border: none;
+  padding: 12px 0;
+  color: rgba(87, 87, 80, 0.8);
+  font-size: 15px;
+}
+
+.header-name a {
+  text-decoration: none;
+  color: rgba(87, 87, 80, 0.8);
 }
 
 /* 右側メニュー右のログアウトボタン */
