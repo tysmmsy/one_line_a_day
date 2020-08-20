@@ -4,10 +4,15 @@
     <div class="header-date">
       2020年8月20日
     </div>
+    <div class="header-name">
+      <%= link_to edit_user_path(current_user) do %>
+        <%= current_user.name %>
+      <% end %>
+    </div>
   </div>
   <div class="right-header">
     <div class="header-button">
-      <input type="submit" value="logout" class="logout-button">
+       <%= link_to "logout", destroy_user_session_path, method: :delete, class: 'logout-button'%>
     </div>
   </div>
 </div>
