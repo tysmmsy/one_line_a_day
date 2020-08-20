@@ -8,16 +8,113 @@
   width: 300px;
   height: 100vh;
   font-family: "游明朝体";
+  margin: 30px;
+  box-shadow:
+  0 1.9px 2.5px rgba(0, 0, 0, 0.057),
+  0 5px 6.1px rgba(0, 0, 0, 0.076),
+  0 10.1px 11.4px rgba(0, 0, 0, 0.086),
+  0 19.2px 19.8px rgba(0, 0, 0, 0.092),
+  0 38.4px 34.8px rgba(0, 0, 0, 0.1),
+  0 101px 74px rgba(0, 0, 0, 0.13);
 }
 
 .side-bar-header {
-  height: 100px;
+  background-color: #f0e9d5;
+  height: 92px;
   padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.content {
+
+.search-diary {
+  color: rgba(87, 87, 80, 0.8);
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  box-shadow:
+  10px 10px 30px rgba(66, 67, 68, 0.5),
+  -10px -10px 30px rgba(248, 253, 255, 0.9),
+  inset 10px 10px 30px transparent,
+  inset -10px -10px 30px transparent;
+}
+
+input::placeholder {
+  text-align: center;
+  color: rgba(87, 87, 80, 0.8);
+  font-size: 18px;
+}
+
+.fas {
+  border: none;
+  padding: 12px 18px;
+  color: rgba(87, 87, 80, 0.8);
+  font-size: 15px;
+  background-color:rgba(248, 253, 255, 0.9);
+  border-radius: 10px;
+  outline: none;
+  transition: box-shadow 0.5s;
+  box-shadow:
+    10px 10px 30px rgba(89, 90, 92, 0.5),
+    -10px -10px 30px rgba(248, 253, 255, 0.9),
+    inset 10px 10px 30px transparent,
+    inset -10px -10px 30px transparent;
+}
+
+.fas:hover {
+  box-shadow:
+  10px 10px 30px transparent,
+  -10px -10px 30px transparent,
+  inset 10px 10px 30px rgba(89, 90, 92, 0.5),
+  inset -10px -10px 30px rgba(248, 253, 255, 0.9);
+}
+
+hr {
+  border: ridge 1px rgba(248, 253, 255, 0.9);
+}
+
+.contents {
   background-color: #f0e9d5;
   height: calc(100vh - 100px);
-  padding: 0 20px;
+  padding: 40px 20px;
+  overflow: scroll;
+}
+
+.contents::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* スクロールの背景の設定 */
+.contents::-webkit-scrollbar-track {
+  background-color: #f0e9d5;
+}
+
+/* スクロールのつまみ部分の設定 */
+.diaries::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #ece9de;
+}
+
+.content {
+  padding: 0 40px;
+  text-decoration: none;
+}
+
+.content-date a {
+  text-decoration: none;
+  color: rgba(87, 87, 80, 0.8);
+}
+
+.content-name{
+  padding-bottom: 15px;
+}
+
+.content-name a {
+  text-decoration: none;
+  color: rgba(54, 44, 9, 0.87);
 }
 
 .diary {
@@ -26,20 +123,51 @@
   width: calc(100% - 300px);
   font-family: "游明朝体";
   /* 仮設定フォント */
+  margin: 20px;
+  box-shadow:
+  0 1.9px 2.5px rgba(0, 0, 0, 0.057),
+  0 5px 6.1px rgba(0, 0, 0, 0.076),
+  0 10.1px 11.4px rgba(0, 0, 0, 0.086),
+  0 19.2px 19.8px rgba(0, 0, 0, 0.092),
+  0 38.4px 34.8px rgba(0, 0, 0, 0.1),
+  0 101px 74px rgba(0, 0, 0, 0.13);
+}
+
+.diary-header {
+  background-color: #f5f1e6;
+  height: 100px;
 }
 
 .diaries {
   background-color: #fffcf4;
   color: #333333;
-  width: calc(100% - 300px);
-  height: calc(100vh - 300px);
+  height: calc(100vh - 100px - 250px);
   font-family: "游明朝体";
   /* 仮設定フォント */
+  overflow: scroll;
+  white-space: nowrap;
   padding: 46px 40px 0;
 }
 
+/* スクロールの幅の設定 */
+.diaries::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* スクロールの背景の設定 */
+.diaries::-webkit-scrollbar-track {
+  background-color: #fffcf4;
+}
+
+/* スクロールのつまみ部分の設定 */
+.diaries::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #fffcf4;
+}
+
 .form {
-  background-color: #DDDDDD;
-  height: 300px;
+  background-color: #ece9de;
+  height: 250px;
   padding: 20px 40px;
 }
