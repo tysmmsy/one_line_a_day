@@ -16,8 +16,7 @@
 
 | Column            | Type     | Options     |
 | ----------------- | -------- | ----------- |
-| title             | string   |             |
-| text              | text     | null: false |
+| content           | text     | null: false |
 | datetime          | datetime |             |
 
 ### Association

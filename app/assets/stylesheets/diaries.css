@@ -230,16 +230,10 @@ hr {
   display: flex;
 }
 
-/* 題名部分 */
-.message-title {
-  color: #333333;
-  font-size: 16px;
-}
-
 /* 日付部分 */
 .message-date {
   color: rgba(87, 87, 80, 0.8);
-  font-size: 14px;
+  font-size: 15px;
   padding-left: 10px;
 }
 
