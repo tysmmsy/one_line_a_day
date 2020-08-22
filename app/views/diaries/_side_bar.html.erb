@@ -8,21 +8,5 @@
 <hr width="200">
 
 <div class="contents">
-  <div class="content">
-    <div class="content-date">
-      <%= link_to '2020年8月20日', '#' %>
-    </div>
-    <div class="content-name">
-      <%= link_to '日記の題名1', '#'%>
-    </div>
-        <div class="content-date">
-      <%= link_to '2020年8月21日', '#' %>
-    </div>
-    <div class="content-name">
-      <%= link_to '日記の題名2', '#'%>
-    </div>
-  </div>
-
-
-
+    <%= render partial: 'info', collection: @diaries %>
 </div>
