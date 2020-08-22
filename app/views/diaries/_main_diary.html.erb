@@ -49,9 +49,11 @@
   </div>
 </div>
 
-<div class="form">
+
+<%= form_with model: @diary, html: {class: "form"}, local: true do |f|%>
   <div class="form-input">
-    <textarea class="form-message" placeholder=""></textarea>
+    <%= f.text_area :content, class: 'form-message', placeholder: '' %>
   </div>
-  <input class="form-submit" type="submit" value="wirte">
-</div>
+  <%= f.submit 'write', class: 'form-submit' %>
+  <input name="[user_id]" type="hidden" value=<%=current_user.id%>>
+<% end %>
