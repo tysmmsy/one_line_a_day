@@ -1,7 +1,6 @@
 class DiariesController < ApplicationController
   def index
-    @diaries = Diary.all.order(id:"DESC")
-    @diaries = @diaries.includes(:user)
+    @diaries = Diary.where(user_id: current_user.id).all.order(id:"DESC")
   end
 
   def create
