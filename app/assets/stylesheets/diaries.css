@@ -5,7 +5,6 @@
 /* 左側のメニューの親要素 */
 .side-bar {
   background-color: #f0e9d5;
-  color: #333333;
   width: 300px;
   height: 100vh;
   font-family: "游明朝体";
@@ -78,7 +77,7 @@ input::placeholder {
 }
 
 hr {
-  border: ridge 1px rgba(248, 253, 255, 0.9);
+  border: ridge 1px #fffcf4;
 }
 
 /* 左側の日記一覧部分の親要素 */
@@ -87,9 +86,10 @@ hr {
   height: calc(100vh - 100px);
   padding: 40px 20px;
   overflow: scroll;
+  word-wrap: break-word;
 }
 
-/* スクロールバー設置 */
+/* スクロールの幅の設定 */
 .contents::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -101,9 +101,9 @@ hr {
 }
 
 /* スクロールのつまみ部分の設定 */
-.diaries::-webkit-scrollbar-thumb {
+.contents::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background: #ece9de;
+  background: #fffcf4;
 }
 
 /* 日記一覧部分 */
@@ -113,17 +113,14 @@ hr {
 }
 
 /* 日記の日付 */
-.content-date a {
+.content-date {
   text-decoration: none;
   color: rgba(87, 87, 80, 0.8);
 }
 
-/* 日記の題名 */
-.content-name{
+/* 日記の見出し */
+.content-name {
   padding-bottom: 15px;
-}
-
-.content-name a {
   text-decoration: none;
   color: rgba(54, 44, 9, 0.87);
 }
@@ -132,7 +129,7 @@ hr {
 .diary {
   background-color: #fffcf4;
   color: #333333;
-  width: calc(100% - 300px);
+  width: calc(90% - 300px);
   font-family: "游明朝体";
   /* 仮設定フォント */
   margin: 30px;
@@ -217,29 +214,40 @@ hr {
   height: calc(100vh - 100px - 250px);
   font-family: "游明朝体";
   /* 仮設定フォント */
-  white-space: nowrap;
   padding: 46px 40px 0;
+  overflow: scroll;
+  word-wrap: break-word;
+}
+
+/* スクロールの幅の設定 */
+.diaries::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* スクロールの背景の設定 */
+.diaries::-webkit-scrollbar-track {
+  background-color: #fffcf4;
+}
+
+/* スクロールのつまみ部分の設定 */
+.diaries::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #ece9de;
 }
 
 .message {
   margin: 20px 0;
-  overflow: scroll;
 }
 
 .upper-message {
   display: flex;
 }
 
-/* 題名部分 */
-.message-title {
-  color: #333333;
-  font-size: 16px;
-}
-
 /* 日付部分 */
 .message-date {
   color: rgba(87, 87, 80, 0.8);
-  font-size: 14px;
+  font-size: 15px;
   padding-left: 10px;
 }
 
@@ -250,23 +258,6 @@ hr {
 .message-content {
   font-size: 16px;
   margin-bottom: 40px;
-}
-
-/* スクロールの幅の設定 */
-.message::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
-/* スクロールの背景の設定 */
-.message::-webkit-scrollbar-track {
-  background-color: #fffcf4;
-}
-
-/* スクロールのつまみ部分の設定 */
-.message::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  background: #fffcf4;
 }
 
 /* 日記フォーム部分 */
@@ -290,7 +281,7 @@ hr {
   width: 100%;
   font-size: 18px;
   outline: none;
-  padding: 40px 0 0 50px;
+  padding: 40px 50px 40px 50px;
   transition: box-shadow 0.5s;
   box-shadow:
   10px 10px 30px rgba(89, 90, 92, 0.5),
