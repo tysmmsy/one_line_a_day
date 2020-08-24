@@ -1,6 +1,6 @@
 class DiariesController < ApplicationController
   def index
-    @diaries = Diary.where(user_id: current_user.id).all.order(id:"DESC")
+    @diaries = Diary.where(user_id: current_user.id).all.order(id: 'DESC')
   end
 
   def create
