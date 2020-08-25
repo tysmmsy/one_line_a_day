@@ -236,28 +236,28 @@ hr {
   background: #ece9de;
 }
 
+/* 日記内容部分の親要素 */
 .message {
-  margin: 20px 0;
 }
 
+/* 日記内容 上部分の親要素 */
 .upper-message {
-  display: flex;
+display: flex;
+}
+@ -251,13 +253,16 @@ hr {
+padding-left: 10px;
 }
 
-/* 日付部分 */
-.message-date {
-  color: rgba(87, 87, 80, 0.8);
-  font-size: 15px;
-  padding-left: 10px;
-}
-
+/* 日記内容 下部分の親要素 */
 .lower-message {
-  margin-top: 10px;
 }
 
+/* 日記内容部分 */
 .message-content {
-  font-size: 16px;
-  margin-bottom: 40px;
+color: #333333;
+font-size: 16px;
+margin-bottom: 20px;
+white-space: pre-line;
 }
 
 /* 日記フォーム部分 */
