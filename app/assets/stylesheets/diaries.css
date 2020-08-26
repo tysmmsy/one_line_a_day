@@ -156,10 +156,10 @@ hr {
 }
 
 /* 右側メニュー左ヘッダーの日付要素 */
-.header-date {
+.header-logo {
   color: #333;
   font-size: 24px;
-  margin: 40px;
+  margin: 41px;
 }
 
 /* 右側メニューのヘッダー左ーのユーザー名(ユーザー編集機能)要素 */
@@ -240,15 +240,17 @@ hr {
 .message {
 }
 
-/* 日記内容 上部分の親要素 */
+/* 日記内容 上部分(日付とeditボタン)の親要素 */
 .upper-message {
 display: flex;
 }
-@ -251,13 +253,16 @@ hr {
-padding-left: 10px;
+
+/* 日記内容 日付部分 */
+.message-date {
+  color: rgba(54, 44, 9, 0.87);
 }
 
-/* 日記内容 下部分の親要素 */
+/* 日記内容 下部分(日記内容とdeleteボタン)の親要素 */
 .lower-message {
   display: flex;
   justify-content: space-between;
@@ -258,45 +260,55 @@ padding-left: 10px;
 .delete-btn {
   text-decoration: none;
   color: rgba(87, 87, 80, 0.8);
-
 }
 
 /* 日記内容部分 */
 .message-content {
 color: #333333;
 font-size: 16px;
+padding-left: 10px;
 margin-bottom: 20px;
 white-space: pre-line;
 }
 
-/* 日記フォーム部分 */
+/* 日記投稿フォーム部分の親要素 */
 .form {
   background-color: #ece9de;
-  height: 250px;
+  height: 260px;
   padding: 20px 40px;
   display: flex;
 }
 
+/* 日記投稿フォーム、日付部分の親要素 */
 .form-input {
-  background-color: rgba(255, 255, 255, 0.747);
-  display: flex;
   width: 100%;
-}
-
-/* 日記投稿フォーム部分 */
-.form-message {
-  border: none;
-  height: 215px;
-  width: 100%;
-  font-size: 18px;
-  outline: none;
-  padding: 40px 50px 40px 50px;
-  transition: box-shadow 0.5s;
   box-shadow:
   10px 10px 30px rgba(89, 90, 92, 0.5),
   -10px -10px 30px rgba(248, 253, 255, 0.9),
   inset 10px 10px 30px transparent,
   inset -10px -10px 30px transparent;
+}
+
+/* 日付部分 */
+.form-date {
+  padding: 13px 930px 0 20px;
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  outline: none;
+  overflow: hidden;
+  color: rgba(54, 44, 9, 0.87);
+}
+
+/* 日記投稿フォーム部分 */
+.form-message {
+  border: none;
+  height: 180px;
+  width: 100%;
+  font-size: 18px;
+  outline: none;
+  padding: 10px 50px 40px 50px;
+
 }
 
 /* 日記投稿ボタン部分 */
