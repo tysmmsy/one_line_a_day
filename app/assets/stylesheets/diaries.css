@@ -162,7 +162,7 @@ hr {
   margin: 40px;
 }
 
-/* 右側メニューの左ヘッダーのユーザー名要素 */
+/* 右側メニューのヘッダー左ーのユーザー名(ユーザー編集機能)要素 */
 .header-name {
   margin: 40px 0;
   border: none;
@@ -250,6 +250,15 @@ padding-left: 10px;
 
 /* 日記内容 下部分の親要素 */
 .lower-message {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 削除(delete)ボタン */
+.delete-btn {
+  text-decoration: none;
+  color: rgba(87, 87, 80, 0.8);
+
 }
 
 /* 日記内容部分 */
