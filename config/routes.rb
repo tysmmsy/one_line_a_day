@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   post "/" => "diaries#create"
   root "diaries#index"
   resources :users, only: [:edit, :update, :create] do
-    resources :diaries, only: [:index, :create]
+    resources :diaries, only: [:index, :create, :destroy]
   end
 end

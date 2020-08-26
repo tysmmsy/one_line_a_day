@@ -1,6 +1,11 @@
 class DiariesController < ApplicationController
+
   def index
     @diaries = Diary.where(user_id: current_user.id).all.order(id: 'DESC')
+  end
+
+  def new
+    @diary = Diary.new
   end
 
   def create
@@ -9,9 +14,14 @@ class DiariesController < ApplicationController
     if @diary.save
       redirect_to user_diaries_path(@user)
     else
-      @diaries = @diaries.includes(:user)
-      render :index
+      redirect_to root_path
     end
+  end
+
+  def destroy
+    @diary = Diary.find(params[:id])
+    @diary.destroy
+    redirect_to root_path
   end
 
   private
@@ -19,4 +29,5 @@ class DiariesController < ApplicationController
   def diary_params
     params.permit(:content).merge(user_id: current_user.id)
   end
+
 end

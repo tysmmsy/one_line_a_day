@@ -18,7 +18,21 @@
 </div>
 
 <div class="diaries">
-  <%= render partial: 'message', collection: @diaries %>
+  <% @diaries.each do |diary| %>
+    <div class="message">
+      <div class="upper-message">
+        <div class="message-date">
+          <%= diary.created_at%>
+        </div>
+      </div>
+      <div class="lower-message">
+        <div class="message-content">
+          <%= diary.content%>
+        </div>
+          <%= link_to 'delete', user_diary_path(current_user.id, diary.id), class: 'delete-btn', method: :delete %>
+      </div>
+    </div>
+  <% end %>
 </div>
 
 
