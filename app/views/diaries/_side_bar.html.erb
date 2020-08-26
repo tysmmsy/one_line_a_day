@@ -8,5 +8,14 @@
 <hr width="200">
 
 <div class="contents">
-    <%= render partial: 'info', collection: @diaries %>
+  <% @diaries.each do |diary| %>
+    <div class="content">
+      <div class="content-date">
+        <%= diary.date%>
+      </div>
+      <div class="content-name">
+        <%= diary.content%>
+      </div>
+    </div>
+  <% end %>
 </div>

@@ -1,8 +1,7 @@
 <div class="diary-header">
   <div class="left-header">
-      <%# カレンダーと同期させる %>
-    <div class="header-date">
-      2020年8月20日
+    <div class="header-logo">
+      one line a day
     </div>
     <div class="header-name">
       <%= link_to edit_user_path(current_user) do %>
@@ -22,7 +21,7 @@
     <div class="message">
       <div class="upper-message">
         <div class="message-date">
-          <%= diary.created_at%>
+          <%= diary.date%>
         </div>
       </div>
       <div class="lower-message">
@@ -38,6 +37,7 @@
 
 <%= form_with model: @diary, html: {class: "form"}, local: true do |f|%>
   <div class="form-input">
+    <%= f.date_field :date, class: 'form-date', type: 'date' %>
     <%= f.text_area :content, class: 'form-message', placeholder: '' %>
   </div>
   <%= f.submit 'write', class: 'form-submit' %>
