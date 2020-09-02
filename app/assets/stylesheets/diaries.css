@@ -278,8 +278,18 @@ display: flex;
 
 /* 削除(delete)ボタン */
 .delete-btn {
+  opacity: 0;
+}
+
+.message:hover .delete-btn {
+  opacity: 0.7;
   text-decoration: none;
-  color: rgba(87, 87, 80, 0.8);
+  color: #333333;
+}
+
+.message .delete-btn:hover {
+  opacity: 1;
+  color: #333333;
 }
 
 /* 日記内容部分 */
