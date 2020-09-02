@@ -1,5 +1,4 @@
 class DiariesController < ApplicationController
-
   def index
     @diaries = Diary.where(user_id: current_user.id).all.order(id: 'DESC')
   end
@@ -26,10 +25,10 @@ class DiariesController < ApplicationController
 
   def search
     # binding.pry
-    if params[:content].present?
-      @diaries = Diary.where('content LIKE ?', "%#{params[:content]}%").where(user_id: current_user.id)
+    @diaries = if params[:content].present?
+      Diary.where('content LIKE ?', "%#{params[:content]}%").where(user_id: current_user.id)
     else
-      @diaries = Diary.none
+      Diary.none
     end
   end
 
@@ -38,5 +37,4 @@ class DiariesController < ApplicationController
   def diary_params
     params.permit(:content, :date).merge(user_id: current_user.id)
   end
-
 end
