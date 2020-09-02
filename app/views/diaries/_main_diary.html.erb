@@ -1,7 +1,7 @@
 <div class="diary-header">
   <div class="left-header">
     <div class="header-logo">
-      one line a day
+      <%= link_to 'one line a day', "/" %>
     </div>
     <div class="header-name">
       <%= link_to edit_user_path(current_user) do %>
@@ -37,7 +37,9 @@
 
 <%= form_with model: @diary, html: {class: "form"}, local: true do |f|%>
   <div class="form-input">
+    <div class="date-input">
     <%= f.date_field :date, class: 'form-date', type: 'date' %>
+    </div>
     <%= f.text_area :content, class: 'form-message', placeholder: '' %>
   </div>
   <%= f.submit 'write', class: 'form-submit' %>
