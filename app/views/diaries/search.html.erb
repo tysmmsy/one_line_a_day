@@ -1,8 +1,49 @@
 <div class="wrapper">
+
   <div class="side-bar" >
     <%= render "side_bar" %>
   </div>
+
+
   <div class="diary" >
-    <%= render "main_diary" %>
+    <div class="diary-header">
+      <div class="left-header">
+        <div class="header-logo">
+          <%= link_to 'one line a day', "/" %>
+        </div>
+        <div class="header-name">
+          <%= link_to edit_user_path(current_user) do %>
+            <%= current_user.name %>
+          <% end %>
+        </div>
+      </div>
+      <div class="right-header">
+        <div class="header-button">
+          <%= link_to "logout", destroy_user_session_path, method: :delete, class: 'logout-button'%>
+        </div>
+      </div>
+    </div>
+
+    <div class="diaries-search">
+      <% @diaries.each do |diary| %>
+        <div class="message">
+          <div class="upper-message">
+            <div class="message-date">
+              <%= diary.date%>
+            </div>
+          </div>
+          <div class="lower-message">
+            <div class="message-content">
+              <%= diary.content%>
+            </div>
+              <%= link_to 'delete', user_diary_path(current_user.id, diary.id), class: 'delete-btn', method: :delete %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+      <div class="back-btn">
+        <%= link_to '入力画面に戻る', "/"%>
+      </div>
   </div>
+
 </div>

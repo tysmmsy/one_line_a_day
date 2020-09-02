@@ -171,6 +171,12 @@ hr {
   text-decoration: none;
 }
 
+.header-logo a:hover {
+  text-decoration: underline;
+  color: #333333;
+}
+
+
 /* 右側メニューのヘッダー左ーのユーザー名(ユーザー編集機能)要素 */
 .header-name {
   margin: 40px 0;
@@ -183,6 +189,11 @@ hr {
 .header-name a {
   text-decoration: none;
   color: rgba(87, 87, 80, 0.8);
+}
+
+.header-name a:hover {
+  text-decoration: underline;
+  color: #333333;
 }
 
 /* 右側メニュー右のログアウトボタン */
@@ -349,4 +360,48 @@ white-space: pre-line;
   -10px -10px 30px transparent,
   inset 10px 10px 30px rgba(89, 90, 92, 0.5),
   inset -1px -1px 30px rgba(248, 253, 255, 0.9);
+}
+
+/* 以下 検索後のページ要素 */
+.diaries-search {
+  background-color: #fffcf4;
+  color: #333333;
+  height: 88vh;
+  font-family: "游明朝体";
+  /* 仮設定フォント */
+  padding: 46px 40px 0;
+  overflow: scroll;
+  word-wrap: break-word;
+}
+
+/* スクロールの幅の設定 */
+.diaries-search::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* スクロールの背景の設定 */
+.diaries-search::-webkit-scrollbar-track {
+  background-color: #fffcf4;
+}
+
+/* スクロールのつまみ部分の設定 */
+.diaries-search::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #ece9de;
+}
+
+/* 入力画面に戻るボタン */
+.back-btn {
+text-align: center;
+}
+
+.back-btn a {
+  text-decoration: none;
+  color: rgba(87, 87, 80, 0.8);
+}
+
+.back-btn a:hover {
+  text-decoration: underline;
+  color: #333333;
 }
