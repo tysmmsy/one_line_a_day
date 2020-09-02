@@ -43,8 +43,8 @@
   border: none;
   outline: none;
   box-shadow:
-  10px 10px 30px rgba(163, 163, 158, 0.5),
-  -1px -1px 30px rgba(248, 253, 255, 0.9),
+  1px 1px 3px rgba(163, 163, 158, 0.5),
+  -1px -1px 3px rgba(248, 253, 255, 0.9),
   inset 10px 10px 30px transparent,
   inset -10px -10px 30px transparent;
 }
@@ -67,18 +67,18 @@
   outline: none;
   transition: box-shadow 0.5s;
   box-shadow:
-    10px 10px 30px rgba(89, 90, 92, 0.5),
-    -1px -1px 30px rgba(248, 253, 255, 0.9),
-    inset 10px 10px 30px transparent,
-    inset -10px -10px 30px transparent;
+  1px 1px 3px rgba(163, 163, 158, 0.5),
+  -1px -1px 3px rgba(248, 253, 255, 0.9),
+  inset 10px 10px 30px transparent,
+  inset -10px -10px 30px transparent;
 }
 
 .fas:hover {
   box-shadow:
-  10px 10px 30px transparent,
-  -10px -10px 30px transparent,
-  inset 10px 10px 30px rgba(89, 90, 92, 0.5),
-  inset -10px -10px 30px rgba(248, 253, 255, 0.9);
+  1px 1px 3px transparent,
+  -1px -1px 3px transparent,
+  inset 3px 3px 13px rgba(89, 90, 92, 0.5),
+  inset -5px -5px 6px rgba(248, 253, 255, 0.9);
 }
 
 hr {
@@ -89,7 +89,7 @@ hr {
 .contents {
   background-color: #f0e9d5;
   height: calc(100vh - 100px);
-  padding: 40px 20px;
+  padding: 20px 20px;
   overflow: scroll;
   word-wrap: break-word;
 }
@@ -208,7 +208,7 @@ hr {
   outline: none;
   transition: box-shadow 0.5s;
   box-shadow:
-  10px 10px 30px rgba(89, 90, 92, 0.5),
+  5px 5px 15px rgba(89, 90, 92, 0.5),
   -10px -10px 30px rgba(248, 253, 255, 0.9),
   inset 10px 10px 30px transparent,
   inset -10px -10px 30px transparent;
@@ -234,7 +234,7 @@ hr {
   height: calc(100vh - 100px - 250px);
   font-family: "游明朝体";
   /* 仮設定フォント */
-  padding: 46px 40px 0;
+  padding: 30px 40px 0;
   overflow: scroll;
   word-wrap: break-word;
 }
@@ -358,7 +358,7 @@ white-space: pre-line;
   border-radius: 10px;
   transition: box-shadow 0.5s;
   box-shadow:
-  10px 10px 30px rgba(89, 90, 92, 0.5),
+  7px 7px 20px rgba(89, 90, 92, 0.5),
   -5px -5px 30px rgba(248, 253, 255, 0.9),
   inset 10px 10px 30px transparent,
   inset -10px -10px 30px transparent;
