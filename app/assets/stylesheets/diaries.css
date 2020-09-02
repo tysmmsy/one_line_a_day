@@ -10,11 +10,11 @@
   font-family: "游明朝体";
   margin: 50px;
   box-shadow:
-  0 1.9px 2.5px rgba(0, 0, 0, 0.057),
-  0 5px 6.1px rgba(0, 0, 0, 0.076),
-  0 10.1px 11.4px rgba(0, 0, 0, 0.086),
-  0 19.2px 19.8px rgba(0, 0, 0, 0.092),
-  0 38.4px 34.8px rgba(0, 0, 0, 0.1),
+  0 2px 3px rgba(0, 0, 0, 0.057),
+  0 5px 6px rgba(0, 0, 0, 0.076),
+  0 1px 1.4px rgba(0, 0, 0, 0.086),
+  0 1px 10.8px rgba(0, 0, 0, 0.092),
+  0 3px 29.8px rgba(0, 0, 0, 0.1),
   0 101px 74px rgba(0, 0, 0, 0.13);
 }
 
@@ -28,23 +28,28 @@
   align-items: center;
 }
 
+.search-input {
+  display: flex;
+}
+
 /* 検索フォーム部分 */
 .search-diary {
+  width: 160px;
   color: rgba(87, 87, 80, 0.8);
-  font-size: 18px;
-  padding: 5px;
+  font-size: 16px;
+  padding-left: 20px;
   margin: 10px;
   border-radius: 10px;
   border: none;
   outline: none;
   box-shadow:
   10px 10px 30px rgba(163, 163, 158, 0.5),
-  -10px -10px 30px rgba(248, 253, 255, 0.9),
+  -1px -1px 30px rgba(248, 253, 255, 0.9),
   inset 10px 10px 30px transparent,
   inset -10px -10px 30px transparent;
 }
 
-input::placeholder {
+.search-diary::placeholder {
   text-align: center;
   color: rgba(87, 87, 80, 0.8);
   font-size: 18px;
@@ -53,17 +58,17 @@ input::placeholder {
 /* 虫眼鏡ボタン */
 .fas {
   border: none;
-  padding: 12px 18px;
+  padding: 12px 10px;
   margin: 10px;
   color: rgba(87, 87, 80, 0.8);
-  font-size: 15px;
+  font-size: 12px;
   background-color:rgba(248, 253, 255, 0.9);
   border-radius: 10px;
   outline: none;
   transition: box-shadow 0.5s;
   box-shadow:
     10px 10px 30px rgba(89, 90, 92, 0.5),
-    -10px -10px 30px rgba(248, 253, 255, 0.9),
+    -1px -1px 30px rgba(248, 253, 255, 0.9),
     inset 10px 10px 30px transparent,
     inset -10px -10px 30px transparent;
 }
@@ -157,9 +162,13 @@ hr {
 
 /* 右側メニュー左ヘッダーの日付要素 */
 .header-logo {
-  color: #333;
   font-size: 24px;
   margin: 41px;
+}
+
+.header-logo a {
+  color: #333;
+  text-decoration: none;
 }
 
 /* 右側メニューのヘッダー左ーのユーザー名(ユーザー編集機能)要素 */
@@ -281,34 +290,39 @@ white-space: pre-line;
 
 /* 日記投稿フォーム、日付部分の親要素 */
 .form-input {
-  width: 100%;
+  width: calc(100% - 100px);
   box-shadow:
-  10px 10px 30px rgba(89, 90, 92, 0.5),
+  10px 10px 20px rgba(89, 90, 92, 0.5),
   -10px -10px 30px rgba(248, 253, 255, 0.9),
   inset 10px 10px 30px transparent,
   inset -10px -10px 30px transparent;
 }
 
 /* 日付部分 */
-.form-date {
-  padding: 13px 930px 0 20px;
+.date-input {
   width: 100%;
   border: none;
   font-size: 16px;
   outline: none;
-  overflow: hidden;
+  background-color: #ffffff
+}
+
+.form-date {
+  padding-left: 20px;
+  border: none;
+  font-size: 16px;
+  outline: none;
   color: rgba(54, 44, 9, 0.87);
 }
 
 /* 日記投稿フォーム部分 */
 .form-message {
   border: none;
-  height: 180px;
+  height: 200px;
   width: 100%;
   font-size: 18px;
   outline: none;
   padding: 10px 50px 40px 50px;
-
 }
 
 /* 日記投稿ボタン部分 */
@@ -324,7 +338,7 @@ white-space: pre-line;
   transition: box-shadow 0.5s;
   box-shadow:
   10px 10px 30px rgba(89, 90, 92, 0.5),
-  -10px -10px 30px rgba(248, 253, 255, 0.9),
+  -5px -5px 30px rgba(248, 253, 255, 0.9),
   inset 10px 10px 30px transparent,
   inset -10px -10px 30px transparent;
 }
@@ -334,5 +348,5 @@ white-space: pre-line;
   10px 10px 30px transparent,
   -10px -10px 30px transparent,
   inset 10px 10px 30px rgba(89, 90, 92, 0.5),
-  inset -10px -10px 30px rgba(248, 253, 255, 0.9);
+  inset -1px -1px 30px rgba(248, 253, 255, 0.9);
 }

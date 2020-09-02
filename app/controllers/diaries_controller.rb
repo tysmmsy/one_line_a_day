@@ -24,6 +24,15 @@ class DiariesController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    # binding.pry
+    if params[:content].present?
+      @diaries = Diary.where('content LIKE ?', "%#{params[:content]}%").where(user_id: current_user.id)
+    else
+      @diaries = Diary.none
+    end
+  end
+
   private
 
   def diary_params
