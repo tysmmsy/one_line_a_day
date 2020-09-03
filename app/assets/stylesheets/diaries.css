@@ -52,16 +52,16 @@
 .search-diary::placeholder {
   text-align: center;
   color: rgba(87, 87, 80, 0.8);
-  font-size: 18px;
+  font-size: 16px;
 }
 
 /* 虫眼鏡ボタン */
 .fas {
   border: none;
-  padding: 12px 10px;
+  padding: 10px 10px;
   margin: 10px;
   color: rgba(87, 87, 80, 0.8);
-  font-size: 12px;
+  font-size: 13px;
   background-color:rgba(248, 253, 255, 0.9);
   border-radius: 10px;
   outline: none;
@@ -88,8 +88,9 @@ hr {
 /* 左側の日記一覧部分の親要素 */
 .contents {
   background-color: #f0e9d5;
-  height: calc(100vh - 100px);
-  padding: 20px 20px;
+  height: calc(100vh - 140px);
+  padding: 20px 15px;
+  margin: 20px 0 30px 0;
   overflow: scroll;
   word-wrap: break-word;
 }
@@ -97,7 +98,7 @@ hr {
 /* スクロールの幅の設定 */
 .contents::-webkit-scrollbar {
   width: 10px;
-  height: 10px;
+  height: 0px;
 }
 
 /* スクロールの背景の設定 */
@@ -113,7 +114,7 @@ hr {
 
 /* 日記一覧部分 */
 .content {
-  padding: 0 40px;
+  padding: 5px 20px;
   text-decoration: none;
 }
 
@@ -160,10 +161,20 @@ hr {
   display: flex;
 }
 
-/* 右側メニュー左ヘッダーの日付要素 */
+/* 右側メニュー左ヘッダーのロゴ要素 */
 .header-logo {
-  font-size: 24px;
-  margin: 41px;
+  font-family:  ;
+  font-size: 20px;
+  margin: 32px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow:
+  1px 1px 3px rgba(89, 90, 92, 0.5),
+  -1px -1px 3px rgba(245, 245, 235, 0.9),
+  inset 3px 2px 13px transparent,
+  inset -2px -2px 3px transparent;
 }
 
 .header-logo a {
@@ -323,13 +334,12 @@ white-space: pre-line;
 .date-input {
   width: 100%;
   border: none;
-  font-size: 16px;
   outline: none;
   background-color: #ffffff
 }
 
 .form-date {
-  padding-left: 20px;
+  padding: 10px 0  0 20px ;
   border: none;
   font-size: 16px;
   outline: none;
@@ -339,9 +349,9 @@ white-space: pre-line;
 /* 日記投稿フォーム部分 */
 .form-message {
   border: none;
-  height: 200px;
+  height: 188px;
   width: 100%;
-  font-size: 18px;
+  font-size: 15px;
   outline: none;
   padding: 10px 50px 40px 50px;
 }
@@ -372,7 +382,7 @@ white-space: pre-line;
   inset -1px -1px 30px rgba(248, 253, 255, 0.9);
 }
 
-/* 以下 検索後のページ要素 */
+/* 検索後のページ要素 */
 .diaries-search {
   background-color: #fffcf4;
   color: #333333;
@@ -401,7 +411,7 @@ white-space: pre-line;
   background: #ece9de;
 }
 
-/* 入力画面に戻るボタン */
+/* 日記投稿画面に戻るボタン */
 .back-btn {
 text-align: center;
 }
@@ -415,3 +425,17 @@ text-align: center;
   text-decoration: underline;
   color: #333333;
 }
+
+/* エフェクト機能 */
+
+/* エフェクト メインページ、サイドバー */
+.effect-fade {
+  opacity: 0;
+  transform: translate(0, 40px);
+  transition: all 2000ms;
+  }
+  
+  .effect-fade.effect-scroll {
+  opacity: 1;
+  transform: translate(0, 0);
+  }

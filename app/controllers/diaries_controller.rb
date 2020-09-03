@@ -24,7 +24,6 @@ class DiariesController < ApplicationController
   end
 
   def search
-    # binding.pry
     @diaries = if params[:content].present?
       Diary.where('content LIKE ?', "%#{params[:content]}%").where(user_id: current_user.id)
     else
