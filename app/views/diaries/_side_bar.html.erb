@@ -8,14 +8,16 @@
 <hr width="200">
 
 <div class="contents">
-  <% @diaries.each do |diary| %>
-    <div class="content">
-      <div class="content-date">
-        <%= diary.date%>
+  <section class="effect-fade">
+    <% @diaries.each do |diary| %>
+      <div class="content">
+        <div class="content-date">
+          <%= diary.date%>
+        </div>
+        <div class="content-name">
+          <%= diary.content%>
+        </div>
       </div>
-      <div class="content-name">
-        <%= diary.content%>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </section>
 </div>
