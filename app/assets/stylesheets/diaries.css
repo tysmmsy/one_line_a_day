@@ -434,7 +434,7 @@ text-align: center;
   transition: all 2000ms;
   }
   
-  .effect-fade.effect-scroll {
+.effect-fade.effect-scroll {
   opacity: 1;
   transform: translate(0, 0);
   }
