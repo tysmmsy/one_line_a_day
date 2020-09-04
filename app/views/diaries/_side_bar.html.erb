@@ -1,6 +1,6 @@
 <div class="side-bar-header">
 <%= form_with(url: search_diaries_path, local: true, method: :get, class: "search-input") do |form| %>
-  <%= form.text_field :content, placeholder: "", class: "search-diary" %>
+  <%= form.text_field :search, class: 'search-diary',value: params[:search], placeholder: ""%>
   <%= form.submit "search", value: "search", class: "fas" %>
 <% end %>
 </div>

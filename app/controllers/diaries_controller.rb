@@ -8,6 +8,7 @@ class DiariesController < ApplicationController
   end
 
   def create
+    binding.pry
     @user = User.find(params[:user_id])
     @diary = @user.diaries.new(diary_params)
     if @diary.save
@@ -24,8 +25,8 @@ class DiariesController < ApplicationController
   end
 
   def search
-    @diaries = if params[:content].present?
-      Diary.where('content LIKE ?', "%#{params[:content]}%").where(user_id: current_user.id)
+    @diaries = if params[:search].present?
+      Diary.search(params[:search]).where(user_id: current_user.id).all.order(id: 'DESC')
     else
       Diary.none
     end
