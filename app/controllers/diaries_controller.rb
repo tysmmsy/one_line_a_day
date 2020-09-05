@@ -1,4 +1,7 @@
 class DiariesController < ApplicationController
+
+  require 'date'
+  
   def index
     @diaries = Diary.where(user_id: current_user.id).all.order(id: 'DESC')
   end
@@ -8,7 +11,6 @@ class DiariesController < ApplicationController
   end
 
   def create
-    binding.pry
     @user = User.find(params[:user_id])
     @diary = @user.diaries.new(diary_params)
     if @diary.save
