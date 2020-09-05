@@ -1,4 +1,7 @@
 class DiariesController < ApplicationController
+
+  require 'date'
+  
   def index
     @diaries = Diary.where(user_id: current_user.id).all.order(id: 'DESC')
   end
@@ -24,8 +27,8 @@ class DiariesController < ApplicationController
   end
 
   def search
-    @diaries = if params[:content].present?
-      Diary.where('content LIKE ?', "%#{params[:content]}%").where(user_id: current_user.id)
+    @diaries = if params[:search].present?
+      Diary.search(params[:search]).where(user_id: current_user.id).all.order(id: 'DESC')
     else
       Diary.none
     end

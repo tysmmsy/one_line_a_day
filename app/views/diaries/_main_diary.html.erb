@@ -21,7 +21,7 @@
     <div class="message">
       <div class="upper-message">
         <div class="message-date">
-          <%= diary.date%>
+          <%= diary.date.to_date.strftime("%Y.%m.%d(%a)")%>
         </div>
       </div>
       <div class="lower-message">
@@ -38,7 +38,7 @@
 <%= form_with model: @diary, html: {class: "form"}, local: true do |f|%>
   <div class="form-input">
     <div class="date-input">
-    <%= f.date_field :date, class: 'form-date', type: 'date' %>
+    <%= f.date_field :date, class: 'form-date'%>
     </div>
     <%= f.text_area :content, class: 'form-message', placeholder: '' %>
   </div>
