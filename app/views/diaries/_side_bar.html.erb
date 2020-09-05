@@ -12,7 +12,7 @@
     <% @diaries.each do |diary| %>
       <div class="content">
         <div class="content-date">
-          <%= diary.date.to_date.strftime("%Y/%m/%d(%a)")%>
+          <%= diary.date.to_date.strftime("%Y.%m.%d(%a)")%>
         </div>
         <div class="content-name">
           <%= diary.content%>
