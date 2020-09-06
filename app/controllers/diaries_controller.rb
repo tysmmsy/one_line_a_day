@@ -1,20 +1,19 @@
 class DiariesController < ApplicationController
 
-  require 'date'
-  
   def index
     @diaries = Diary.where(user_id: current_user.id).all.order(id: 'DESC')
   end
 
   def new
-    @diary = Diary.new
+
   end
 
   def create
+    # binding.pry
     @user = User.find(params[:user_id])
-    @diary = @user.diaries.new(diary_params)
+    @diary = DiariesTag.new(diary_params)
     if @diary.save
-      redirect_to user_diaries_path(@user)
+      redirect_to root_path
     else
       redirect_to root_path
     end
@@ -37,6 +36,6 @@ class DiariesController < ApplicationController
   private
 
   def diary_params
-    params.permit(:content, :date).merge(user_id: current_user.id)
+    params.permit(:content, :date, :name).merge(user_id: current_user.id)
   end
 end

@@ -23,6 +23,13 @@
         <div class="message-date">
           <%= diary.date.to_date.strftime("%Y.%m.%d(%a)")%>
         </div>
+        <ul class="tag">
+          <li class="tag-list">
+            <%diary.tags.each do |tag| %>
+              #<%=tag.name%>
+            <%end%>
+          </li>
+        </ul>
       </div>
       <div class="lower-message">
         <div class="message-content">
@@ -39,6 +46,9 @@
   <div class="form-input">
     <div class="date-input">
     <%= f.date_field :date, class: 'form-date'%>
+    </div>
+    <div class="tag-field", id='tag-field'>
+      <%= f.text_field :name, class:"input-tag", placeholder: 'tag' %>
     </div>
     <%= f.text_area :content, class: 'form-message', placeholder: '' %>
   </div>
