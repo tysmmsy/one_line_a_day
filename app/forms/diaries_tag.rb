@@ -10,8 +10,9 @@ class DiariesTag
 
 
   def save
-    tag = Tag.create(name: name)
     diary = Diary.create(content:  content, date: date, user_id: user_id)
+    tag = Tag.where(name: name).first_or_initialize
+    tag.save
     DiaryTagRelation.create(diary_id: diary.id, tag_id: tag.id)
   end
 

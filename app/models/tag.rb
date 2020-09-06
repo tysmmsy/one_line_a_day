@@ -1,4 +1,6 @@
 class Tag < ApplicationRecord
   has_many :diary_tag_relations
   has_many :diaries, through: :diary_tag_relations
+
+  validates :name, uniqueness: true
 end
