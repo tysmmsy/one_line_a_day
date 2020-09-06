@@ -120,3 +120,15 @@
   padding: 0;
   font-size: 13px;
 }
+
+ /* スマホ表示時 */
+ @media (max-width: 599px) {
+  .account-page .account-page__inner {
+    width: 400px;
+    display: grid;
+    place-items: center;
+    font-size: 14px;
+  }
+
+
+ }
