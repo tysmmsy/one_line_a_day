@@ -338,12 +338,34 @@ white-space: pre-line;
   background-color: #ffffff
 }
 
+.date-tag-input {
+  display: flex;
+}
 .form-date {
-  padding: 10px 0  0 20px ;
+  padding: 10px 0  0 40px ;
   border: none;
   font-size: 16px;
   outline: none;
   color: rgba(54, 44, 9, 0.87);
+}
+.tag-field {
+  padding: 10px 20px  0 20px ;
+  background-color: #ffffff
+}
+.input-tag {
+  width: 100px;
+  text-align: center;
+  border: none;
+  outline: none;
+  border-bottom:rgba(54, 44, 9, 0.87) 1px solid;
+}
+.tag-search-result {
+  background-color: #ffffff
+}
+.child{
+  border-bottom:#666 1px solid;
+  margin: 10px 0;
+  padding-left: 11px;
 }
 
 /* 日記投稿フォーム部分 */

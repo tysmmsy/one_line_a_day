@@ -26,12 +26,16 @@ class DiariesController < ApplicationController
   end
 
   def search
-    @diaries = if params[:search].present?
-      Diary.search(params[:search]).where(user_id: current_user.id).all.order(id: 'DESC')
-    else
-      Diary.none
-    end
+    return nil if params[:input] == ""
+    tag = Tag.where(['name LIKE ?', "%#{params[:input]}%"] )
+    render json:{ keyword: tag }
   end
+
+  # def tag_search
+  #   return nil if params[:input] == ""
+  #   tag = Tag.where(['name LIKE ?', "%#{params[:input]}%"] )
+  #   render json:{ keyword: tag }
+  # end
 
   private
 
