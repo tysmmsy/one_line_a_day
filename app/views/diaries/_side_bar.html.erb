@@ -9,15 +9,12 @@
 
 <div class="contents">
   <section class="effect-fade">
-    <% @diaries.each do |diary| %>
-      <div class="content">
-        <div class="content-date">
-          <%= diary.date.to_date.strftime("%Y.%m.%d(%a)")%>
-        </div>
-        <div class="content-name">
-          <%= diary.content%>
-        </div>
-      </div>
-    <% end %>
+        <% @tags.each do |tag| %>
+          <ul class="tag">
+            <li class="tag-list">
+              <%=tag.name%>
+            </li>
+          </ul>
+        <% end %>
   </section>
 </div>

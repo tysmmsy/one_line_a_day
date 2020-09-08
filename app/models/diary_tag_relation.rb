@@ -1,6 +1,5 @@
 class DiaryTagRelation < ApplicationRecord
-
   belongs_to :diary
-  belongs_to :tag
+  belongs_to :tag, dependent: :destroy
   
 end

@@ -112,6 +112,10 @@ hr {
   background: #fffcf4;
 }
 
+.tag-list {
+  padding: 10px 0 0 10px;
+}
+
 /* 日記一覧部分 */
 .content {
   padding: 0 20px;
@@ -280,6 +284,11 @@ display: flex;
   color: rgba(54, 44, 9, 0.87);
 }
 
+.content-tag {
+  padding-left: 15px;
+  color: rgb(145, 145, 145);
+}
+
 /* 日記内容 下部分(日記内容とdeleteボタン)の親要素 */
 .lower-message {
   display: flex;
@@ -322,7 +331,8 @@ white-space: pre-line;
 
 /* 日記投稿フォーム、日付部分の親要素 */
 .form-input {
-  width: calc(100% - 100px);
+  background-color: #ffffff;
+  width: calc(100% - 90px);
   box-shadow:
   5px 5px 10px rgba(89, 90, 92, 0.5),
   -2px -2px 10px rgba(248, 253, 255, 0.9),
@@ -502,11 +512,23 @@ text-align: center;
     margin-left: 0;
   }
 
+  .form {
+    height: auto;
+  }
+
+  .form-message {
+    height: 150px;
+  }
+
+  .date-tag-input {
+    display: block;
+  }
+
   .side-bar {display: none;}
   }
 
    /* スマホ表示時 */
-  @media (max-width: 823px) {
+  @media (max-width: 930px) {
 
   .diary {
     place-items: center;

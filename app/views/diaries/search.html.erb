@@ -1,8 +1,35 @@
   <div class="wrapper">
 
-    <div class="side-bar" >
-      <%= render "side_bar" %>
+  <div class="side-bar" >
+    <div class="side-bar-header">
+      <%= form_with(url: search_diaries_path, local: true, method: :get, class: "search-input") do |form| %>
+        <%= form.text_field :search, class: 'search-diary',value: params[:search], placeholder: ""%>
+        <%= form.submit "search", value: "search", class: "fas" %>
+      <% end %>
     </div>
+
+    <hr width="200">
+
+    <div class="contents">
+      <% @diaries.each do |diary| %>
+        <div class="content">
+          <div class="content-date">
+            <%= diary.date.to_date.strftime("%Y.%m.%d(%a)")%>
+          </div>
+          <% diary.tags.each do |tag| %>
+            <ul class="tag">
+              <li class="tag-list">
+                <%=tag.name%>
+              </li>
+            </ul>
+          <% end %>
+          <div class="content-name">
+            <%= diary.content%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
 
     <div class="diary" >

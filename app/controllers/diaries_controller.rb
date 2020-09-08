@@ -2,10 +2,7 @@ class DiariesController < ApplicationController
 
   def index
     @diaries = Diary.where(user_id: current_user.id).all.order(id: 'DESC')
-  end
-
-  def new
-
+    @tags = Tag.includes(:diaries).where(diary_tag_relations: {diary_id: @diaries})
   end
 
   def create
@@ -26,9 +23,12 @@ class DiariesController < ApplicationController
   end
 
   def search
-    return nil if params[:input] == ""
-    tag = Tag.where(['name LIKE ?', "%#{params[:input]}%"] )
-    render json:{ keyword: tag }
+    @tag = Tag.new
+    @diaries = if params[:search].present?
+      Diary.search(params[:search]).where(user_id: current_user.id).all.order(id: 'DESC')
+    else
+      Diary.all.where(user_id: current_user.id).all.order(id: 'DESC')
+    end
   end
 
   # def tag_search

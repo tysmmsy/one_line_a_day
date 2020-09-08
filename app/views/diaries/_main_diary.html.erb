@@ -23,13 +23,15 @@
         <div class="message-date">
           <%= diary.date.to_date.strftime("%Y.%m.%d(%a)")%>
         </div>
-        <ul class="tag">
-          <li class="tag-list">
-            <%diary.tags.each do |tag| %>
-              #<%=tag.name%>
-            <%end%>
-          </li>
-        </ul>
+        <div class="content-tag">
+        <% diary.tags.each do |tag| %>
+          <ul class="tag">
+            <li class="tag-list">
+              <%=tag.name%>
+            </li>
+          </ul>
+        <% end %>
+        </div>
       </div>
       <div class="lower-message">
         <div class="message-content">
