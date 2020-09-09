@@ -86,28 +86,28 @@ hr {
 }
 
 /* 左側の日記一覧部分の親要素 */
-.side-contents {
+.contents {
   background-color: #f0e9d5;
   height: calc(100vh - 140px);
   padding: 0 15px;
-  margin: 0 0 30px 0;
+  margin: 10px 0 30px 10px;
   overflow: scroll;
   word-wrap: break-word;
 }
 
 /* スクロールの幅の設定 */
-.side-contents::-webkit-scrollbar {
+.contents::-webkit-scrollbar {
   width: 10px;
   height: 0px;
 }
 
 /* スクロールの背景の設定 */
-.side-contents::-webkit-scrollbar-track {
+.contents::-webkit-scrollbar-track {
   background-color: #f0e9d5;
 }
 
 /* スクロールのつまみ部分の設定 */
-.side-contents::-webkit-scrollbar-thumb {
+.contents::-webkit-scrollbar-thumb {
   border-radius: 5px;
   background: #fffcf4;
 }
@@ -122,7 +122,10 @@ hr {
 .side-tag-name:hover{
   color: rgba(87, 87, 80, 0.8);
 }
-
+.side-content {
+  padding: 15px 20px 0px 25px;
+  
+}
 .search-side-tag-list {
 font-size: 14px;
 padding-left: 20px;
