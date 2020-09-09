@@ -86,35 +86,52 @@ hr {
 }
 
 /* 左側の日記一覧部分の親要素 */
-.contents {
+.side-contents {
   background-color: #f0e9d5;
   height: calc(100vh - 140px);
-  padding: 20px 15px;
-  margin: 20px 0 30px 0;
+  padding: 0 15px;
+  margin: 0 0 30px 0;
   overflow: scroll;
   word-wrap: break-word;
 }
 
 /* スクロールの幅の設定 */
-.contents::-webkit-scrollbar {
+.side-contents::-webkit-scrollbar {
   width: 10px;
   height: 0px;
 }
 
 /* スクロールの背景の設定 */
-.contents::-webkit-scrollbar-track {
+.side-contents::-webkit-scrollbar-track {
   background-color: #f0e9d5;
 }
 
 /* スクロールのつまみ部分の設定 */
-.contents::-webkit-scrollbar-thumb {
+.side-contents::-webkit-scrollbar-thumb {
   border-radius: 5px;
   background: #fffcf4;
 }
 
+.side-tag-list {
+  padding: 20px 55px 0 55px;
+}
+.side-tag-name {
+  text-decoration: none;
+  color: #333333;
+}
+.side-tag-name:hover{
+  color: rgba(87, 87, 80, 0.8);
+}
+
+.search-side-tag-list {
+font-size: 14px;
+padding-left: 20px;
+color: rgb(145, 145, 145);
+}
+
 /* 日記一覧部分 */
 .content {
-  padding: 0 20px;
+  padding: 10px 20px;
   text-decoration: none;
 }
 
@@ -122,11 +139,12 @@ hr {
 .content-date {
   text-decoration: none;
   color: rgba(87, 87, 80, 0.8);
+  padding-left: 20px;
 }
 
 /* 日記の見出し */
 .content-name {
-  padding-bottom: 15px;
+  padding: 10px 10px 10px 30px;
   text-decoration: none;
   color: rgba(54, 44, 9, 0.87);
 }
@@ -280,6 +298,12 @@ display: flex;
   color: rgba(54, 44, 9, 0.87);
 }
 
+.content-tag {
+  font-size: 15px;
+  padding-left: 15px;
+  color: rgb(145, 145, 145);
+}
+
 /* 日記内容 下部分(日記内容とdeleteボタン)の親要素 */
 .lower-message {
   display: flex;
@@ -322,7 +346,8 @@ white-space: pre-line;
 
 /* 日記投稿フォーム、日付部分の親要素 */
 .form-input {
-  width: calc(100% - 100px);
+  background-color: #ffffff;
+  width: calc(100% - 90px);
   box-shadow:
   5px 5px 10px rgba(89, 90, 92, 0.5),
   -2px -2px 10px rgba(248, 253, 255, 0.9),
@@ -338,13 +363,35 @@ white-space: pre-line;
   background-color: #ffffff
 }
 
+.date-tag-input {
+  display: flex;
+}
 .form-date {
-  padding: 10px 0  0 20px ;
+  padding: 10px 0  0 40px ;
   border: none;
   font-size: 16px;
   outline: none;
   color: rgba(54, 44, 9, 0.87);
 }
+.tag-field {
+  padding: 10px 20px  0 20px ;
+  background-color: #ffffff
+}
+.input-tag {
+  width: 100px;
+  text-align: center;
+  border: none;
+  outline: none;
+  border-bottom:rgba(54, 44, 9, 0.87) 1px solid;
+}
+/* .tag-search-result {
+  background-color: #ffffff
+}
+.child{
+  border-bottom:#666 1px solid;
+  margin: 10px 0;
+  padding-left: 11px;
+} */
 
 /* 日記投稿フォーム部分 */
 .form-message {
@@ -389,7 +436,6 @@ white-space: pre-line;
   height: 88vh;
   font-family: "游明朝体";
   /* 仮設定フォント */
-  padding: 46px 40px 0;
   overflow: scroll;
   word-wrap: break-word;
 }
@@ -480,11 +526,23 @@ text-align: center;
     margin-left: 0;
   }
 
+  .form {
+    height: auto;
+  }
+
+  .form-message {
+    height: 150px;
+  }
+
+  .date-tag-input {
+    display: block;
+  }
+
   .side-bar {display: none;}
   }
 
    /* スマホ表示時 */
-  @media (max-width: 823px) {
+  @media (max-width: 930px) {
 
   .diary {
     place-items: center;

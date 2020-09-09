@@ -9,15 +9,14 @@
 
 <div class="contents">
   <section class="effect-fade">
-    <% @diaries.each do |diary| %>
-      <div class="content">
-        <div class="content-date">
-          <%= diary.date.to_date.strftime("%Y.%m.%d(%a)")%>
-        </div>
-        <div class="content-name">
-          <%= diary.content%>
-        </div>
-      </div>
+    <% @tags.each do |tag| %>
+      <ul class="side-tag">
+        <li class="side-tag-list">
+          <%= link_to diary_path(tag.id), method: :get, class: "side-tag-name" do %>
+          <%= tag.name %>
+          <%end%>
+        </li>
+      </ul>
     <% end %>
   </section>
 </div>

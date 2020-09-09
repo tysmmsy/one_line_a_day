@@ -23,6 +23,15 @@
         <div class="message-date">
           <%= diary.date.to_date.strftime("%Y.%m.%d(%a)")%>
         </div>
+        <div class="content-tag">
+        <% diary.tags.each do |tag| %>
+          <ul class="tag">
+            <li class="tag-list">
+              <%=tag.name%>
+            </li>
+          </ul>
+        <% end %>
+        </div>
       </div>
       <div class="lower-message">
         <div class="message-content">
@@ -37,8 +46,15 @@
 
 <%= form_with model: @diary, html: {class: "form"}, local: true do |f|%>
   <div class="form-input">
-    <div class="date-input">
-    <%= f.date_field :date, class: 'form-date'%>
+    <div class="date-tag-input">
+      <div class="date-input">
+      <%= f.date_field :date, class: 'form-date'%>
+      </div>
+      <div class="tag-field", id='tag-field'>
+        <%= f.text_field :name, class:"input-tag", id:"diary_tag_name", placeholder: 'journal' %>
+      </div>
+        <div class="tag-search-result", id="tag-search-result">
+      </div>
     </div>
     <%= f.text_area :content, class: 'form-message', placeholder: '' %>
   </div>
