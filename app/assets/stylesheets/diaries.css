@@ -86,7 +86,7 @@ hr {
 }
 
 /* 左側の日記一覧部分の親要素 */
-.contents {
+.side-contents {
   background-color: #f0e9d5;
   height: calc(100vh - 140px);
   padding: 0 15px;
@@ -96,18 +96,18 @@ hr {
 }
 
 /* スクロールの幅の設定 */
-.contents::-webkit-scrollbar {
+.side-contents::-webkit-scrollbar {
   width: 10px;
   height: 0px;
 }
 
 /* スクロールの背景の設定 */
-.contents::-webkit-scrollbar-track {
+.side-contents::-webkit-scrollbar-track {
   background-color: #f0e9d5;
 }
 
 /* スクロールのつまみ部分の設定 */
-.contents::-webkit-scrollbar-thumb {
+.side-contents::-webkit-scrollbar-thumb {
   border-radius: 5px;
   background: #fffcf4;
 }
@@ -115,11 +115,21 @@ hr {
 .side-tag-list {
   padding: 20px 55px 0 55px;
 }
+.side-tag-name {
+  text-decoration: none;
+  color: #333333;
+}
+.side-tag-name:hover{
+  color: rgba(87, 87, 80, 0.8);
+}
+
+.search-side-tag-list {
+font-size: 14px;
+padding-left: 20px;
+color: rgb(145, 145, 145);
+}
 
 /* 日記一覧部分 */
-.contents {
-  padding-top: 10px;
-}
 .content {
   padding: 10px 20px;
   text-decoration: none;
@@ -289,6 +299,7 @@ display: flex;
 }
 
 .content-tag {
+  font-size: 15px;
   padding-left: 15px;
   color: rgb(145, 145, 145);
 }
@@ -373,14 +384,14 @@ white-space: pre-line;
   outline: none;
   border-bottom:rgba(54, 44, 9, 0.87) 1px solid;
 }
-.tag-search-result {
+/* .tag-search-result {
   background-color: #ffffff
 }
 .child{
   border-bottom:#666 1px solid;
   margin: 10px 0;
   padding-left: 11px;
-}
+} */
 
 /* 日記投稿フォーム部分 */
 .form-message {
@@ -425,7 +436,6 @@ white-space: pre-line;
   height: 88vh;
   font-family: "游明朝体";
   /* 仮設定フォント */
-  padding: 46px 40px 0;
   overflow: scroll;
   word-wrap: break-word;
 }

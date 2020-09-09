@@ -23,12 +23,16 @@ class DiariesController < ApplicationController
   end
 
   def search
-    @tag = Tag.new
     @diaries = if params[:search].present?
       Diary.search(params[:search]).where(user_id: current_user.id).all.order(id: 'DESC')
     else
       Diary.all.where(user_id: current_user.id).all.order(id: 'DESC')
     end
+  end
+
+  def show
+    @tags = Tag.find(params[:id])
+    @diaries = Diary.includes(:tags).where(diary_tag_relations: {tag_id: @tags})
   end
 
   # def tag_search

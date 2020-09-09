@@ -1,6 +1,6 @@
 <div class="wrapper">
 
-  <div class="side-bar" >
+<div class="side-bar" >
       <div class="side-bar-header">
         <%= form_with(url: search_diaries_path, local: true, method: :get, class: "search-input") do |form| %>
           <%= form.text_field :search, class: 'search-diary',value: params[:search], placeholder: ""%>
@@ -10,30 +10,14 @@
 
     <hr width="200">
 
-    <div class="contents">
-      <section class="effect-fade">
-        <% @diaries.each do |diary| %>
-          <div class="side-content">
-            <div class="search-content">
-              <div class="content-date">
-                <%= diary.date.to_date.strftime("%Y.%m.%d(%a)")%>
-              </div>
-                <% diary.tags.each do |tag| %>
-                  <ul class="search-side-tag">
-                    <li class="search-side-tag-list">
-                      <%=tag.name%>
-                    </li>
-                  </ul>
-                <% end %>
-            </div>
-            <div class="content-name">
-              <%= diary.content%>
-            </div>
-          </div>
-        <% end %>
-      </section>
+    <div class="side-contents">
+      <ul class="side-tag">
+        <li class="side-tag-list">
+          <%= @tags.name %>
+        </li>
+      </ul>
     </div>
-  </div>
+</div>
 
 
   <div class="diary" >
@@ -63,15 +47,6 @@
             <div class="upper-message">
               <div class="message-date">
                 <%= diary.date.to_date.strftime("%Y.%m.%d(%a)")%>
-              </div>
-              <div class="content-tag">
-              <% diary.tags.each do |tag| %>
-                <ul class="tag">
-                  <li class="tag-list">
-                    <%=tag.name%>
-                  </li>
-                </ul>
-              <% end %>
               </div>
             </div>
             <div class="lower-message">

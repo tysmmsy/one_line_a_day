@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root "diaries#index"
   
   resources :users, only: [:edit, :update, :create] do
-    resources :diaries, only: [:index, :create, :destroy]
+    resources :diaries, only: [:index, :create, :show, :destroy]
       end
       
   resources :diaries do
