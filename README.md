@@ -132,9 +132,9 @@ gem 'rails_12factor'
 # テーブル設計
 
 ## ER図
-![](https://i.gyazo.com/fae3263b2a999c3b0ce76b5fe7f443bd.png)
+![](https://i.gyazo.com/23c8089055ca51882df7ff8176e27ae7.png)
 
-## users テーブル
+## users テーブル(deviseの初期設定に準じる)
 
 | Column            | Type   | Options                   |
 | ----------------- | ------ | ------------------------- |
@@ -148,10 +148,11 @@ gem 'rails_12factor'
 
 ## diaries テーブル
 
-| Column            | Type     | Options     |
-| ----------------- | -------- | ----------- |
-| content           | text     | null: false |
-| datetime          | datetime |             |
+| Column            | Type       | Options           |
+| ----------------- | ---------- | ----------------- |
+| content           | text       | null: false       |
+| date              | string     | null: false       |
+| user_id           | references | foreign_key: true |
 
 ### Association
 
@@ -161,9 +162,9 @@ gem 'rails_12factor'
 
 ## tags テーブル
 
-| Column            | Type     | Options          |
-| ----------------- | -------- | ---------------- |
-| name              | string   | uniqueness: true |
+| Column            | Type     | Options                   |
+| ----------------- | -------- | ------------------------- |
+| name              | string   | null: false, unique: true |
 
 ### Association
 
@@ -176,3 +177,8 @@ gem 'rails_12factor'
 | -------- | ------------ | ----------------- |
 | diary    | references   | foreign_key: true |
 | tag      | references   | foreign_key: true |
+
+### Association
+
+- belongs_to :diary
+- belongs_to :tag
