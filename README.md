@@ -35,7 +35,10 @@ one line a day (一行日記)
 このアプリをきっかけに、日常を記録して人生を豊かにする手助けになれたらと思います。  
 
 ## URL  
-https://one-line-a-day-28102.herokuapp.com/
+https://one-line-a-day-28102.herokuapp.com/  
+・テストアカウント1  
+Email: test@test.com  
+Password: aaa111  
 
 ## ユーザー認証  
 ユーザー名: admin  
@@ -56,23 +59,24 @@ nickname,email,passwordを入力し、アカウント登録を済ませるとメ
 
 ・日記の投稿の仕方  
 メインビュー下部にテキストボックスを配置していますので、日付と投稿内容が入力できたら右下に設置してあるwriteボタンを押して投稿を完了します。  
-確認用GIF: https://gyazo.com/8005e403d0ab0e6b1324be3d726f61a0  
+![投稿機能](https://user-images.githubusercontent.com/68370113/93043962-56c8a380-f68e-11ea-9def-133e99c08721.gif)  
+
 投稿フォーム右上のjournal欄は日記のテーマのようなもので、入力しなくても日記は投稿できるようになっています。(日付と内容は入力が必須です)  
-確認用GIF: https://gyazo.com/feb4d1b1b47c605fef453b5dc44c7135  
+![ジャーナル保存機能](https://user-images.githubusercontent.com/68370113/93043983-69db7380-f68e-11ea-8f5a-baa4bfd717bf.gif)  
 
 ・journalについて  
 journal欄に入力された値は左側のサイドバーに表示されます。  
 この値をクリックするとjournalに紐付いた投稿内容が右側のメインビューに表示されます。  
-確認用GIF: https://gyazo.com/7ebd02b8b194456d1a8d5bddc29e6f87
+![ジャーナル表示機能](https://user-images.githubusercontent.com/68370113/93044001-78c22600-f68e-11ea-8ea1-07061d3af2fa.gif)  
 
 ・削除機能
 メインビューの投稿にカーソルをホバーするとdeleteボタンが右に出ますのでクリックすると投稿、ジャーナルが削除されます  
-確認用GIF: https://gyazo.com/02ddc0cf0acdb2b4f97adf4f3ba5e0af
+![削除機能](https://user-images.githubusercontent.com/68370113/93044004-7bbd1680-f68e-11ea-9e25-5f554296ca13.gif)
 
 ・検索機能  
 左上のsearchボックスからキーワード検索、日付検索(年月日で検索する場合は - で2020-10のように繋げて入力)ができます。  
 何も入力せずにsearchボタンをクリックするとサイドバー、メインビューに全投稿が表示されます。  
-確認用GIF: https://gyazo.com/ac16d5017c16d53afa2ca88f5f2538c7  
+![検索機能](https://user-images.githubusercontent.com/68370113/93044010-7cee4380-f68e-11ea-9b58-cede4d3ed7ab.gif)
 
 ## 目指した課題解決
 ・日記の良さは分かっているが、続けることが出来ない  
